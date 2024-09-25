@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const base_url = 'http://localhost:9000/product';
+const base_url = 'https://ecommerce-backend-quap.onrender.com/product';
 
 
 
