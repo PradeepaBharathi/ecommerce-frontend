@@ -7,7 +7,7 @@ export default function FashionBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between py-12 lg:py-20">
           
-          {/* Left Side (Heading and Subtext) */}
+         
           <div className="lg:w-1/2 text-center lg:text-left">
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 leading-tight">
               <span className="block">Find Your</span>
@@ -26,7 +26,7 @@ export default function FashionBanner() {
             </div>
           </div>
           
-          {/* Right Side (Image with Floating Text) */}
+         
           <div className="relative lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
             <img src={productImage} alt="Fashion Item" className="h-96 object-cover" />
             <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 text-7xl font-bold text-gray-300 rotate-90 sm:text-5xl xs:text-3xl">
@@ -39,7 +39,7 @@ export default function FashionBanner() {
           </div>
         </div>
         
-        {/* Stats Section */}
+       
         <div className="mt-5 grid grid-cols-3 gap-4 text-center">
           <div>
             <p className="text-4xl font-bold">9k+</p>

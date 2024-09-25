@@ -70,7 +70,7 @@ const FeaturedCarousel = () => {
   );
 };
 
-// Custom Arrow Components
+
 const NextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
