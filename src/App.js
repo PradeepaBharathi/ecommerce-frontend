@@ -13,6 +13,7 @@ import Product from './Components/Product/Product'
 import { useDispatch } from 'react-redux';
 
 import { useEffect } from 'react';
+import Cart from './Components/cart/Cart';
 function App() {
  
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/makeup/:category' element={<Makeup/>}></Route>
         <Route path='/electronics/:category' element={<Electronics/>}></Route>
         <Route path='/product/:id' element={<Product/>}></Route>
+        <Route path='/cart' element={<Cart/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,112 @@
+
+
+.image-container {
+    position: relative;
+  }
+  
+  .jewellery-image {
+    width: 91%;
+    height: 24rem;
+    margin: 3.5rem;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #d97706;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .product-card {
+    width: 18rem;
+    height: auto;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d1d5db;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fef3c7;
+    cursor: pointer;
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .product-image {
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+  }
+  
+  .product-details {
+    margin-top: 1rem;
+    flex-grow: 1;
+  }
+  
+  .product-title {
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  
+  .product-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2937;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap:3px
+  }
+  
+  .add-to-cart-button {
+    background-color: #f59e0b;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #d97706;
+  }
+  
+  @media screen and (max-width: 426px) and (min-width: 320px) {
+      
+  .jewellery-image {
+  
+    margin:1rem;
+  }
+    
+  }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductById } from '../redux/Productslice';
 import { useParams } from 'react-router-dom';
+import { addToCart } from '../redux/cartProductSlice';
 
 
 function Product() {
@@ -13,6 +14,14 @@ function Product() {
     dispatch(fetchProductById({ id: id }));
   }, [dispatch, id]);
 
+  const handleAddtocart = (e, productId) => {
+    e.stopPropagation();
+    const quantity = 1;  
+    dispatch(addToCart({ productId, quantity }));
+    window.location.reload()
+    console.log("Add to cart button clicked");
+    console.log(productId);
+  };
 
   return (
     <div className='flex items-center justify-center min-h-screen'>
@@ -30,7 +39,7 @@ function Product() {
 
               <div className='text-black font-bold '>Available : {product.availability}</div>
               <div className="flex justify-center">
-                <button className="bg-amber-400 text-black font-bold text-center px-4 py-1 rounded">
+                <button onClick={(e) => handleAddtocart(e,product._id)} className="bg-amber-400 text-black font-bold text-center px-4 py-1 rounded">
                   Add to cart
                 </button>
               </div>

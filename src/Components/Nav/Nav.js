@@ -10,6 +10,7 @@ import {
 } from "@headlessui/react";
 import {
   Bars3Icon,
+  CheckBadgeIcon,
   MagnifyingGlassIcon,
   ShoppingCartIcon,
   UserCircleIcon,
@@ -19,6 +20,7 @@ import { Link, useNavigate } from "react-router-dom";
 import shoplogo from "../Assests/shoplogo.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct, fetchProductByCategory } from "../redux/Productslice";
+import { fetchCartItems, fetchQuantity } from "../redux/cartProductSlice";
 
 const navigation = [
   { name: "Mens", href: "/mens" },
@@ -40,9 +42,14 @@ export default function Nav() {
   const navigate = useNavigate();
   const product = useSelector((state) => state.product.allProducts);
 
+useEffect(()=>{
+  dispatch(fetchQuantity()); 
+},[dispatch,fetchQuantity])
+
 
   useEffect(() => {
     dispatch(fetchProduct());
+  
   }, [dispatch]);
 
   const handleSearch = (e) => {
@@ -69,6 +76,13 @@ export default function Nav() {
     setSearchTerm('');
     setFilteredProducts([]);
   };
+
+  const cartItems = useSelector((state) => state.cart.cartQuantity);
+  console.log(cartItems)
+
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item, 0);
+  console.log(totalQuantity)
+  
   return (
     <Disclosure as="nav" className="bg-amber-200">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -143,9 +157,10 @@ export default function Nav() {
                 <ShoppingCartIcon
                   aria-hidden="true"
                   className="h-6 w-6 cart "
+                  onClick={() => navigate("/cart")}
                 />
                 <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white rounded-full h-4 w-4 flex items-center justify-center text-xs">
-              0
+                {totalQuantity}
                 </span>
               </div>
             </button>
